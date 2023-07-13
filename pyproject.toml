@@ -1,6 +1,6 @@
 [build-system]
 requires = ["hatchling"]
-build-backend = "hatcling.build"
+build-backend = "hatchling.build"
 
 [project]
 name = "gamocosm"
