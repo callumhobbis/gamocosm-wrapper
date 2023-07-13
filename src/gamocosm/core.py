@@ -1,9 +1,20 @@
 from __future__ import annotations
 
+import os
 import requests
-import toml
+import tomllib
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Self, Any
+
+
+cfg_root = Path(
+    os.environ.get("APPDATA")
+    or os.environ.get("XDG_CONFIG_HOME")
+    or os.path.join(os.environ["HOME"], ".config")
+) / "gamocosm"
+servers_path = cfg_root/"server_list.toml"
+os.makedirs(cfg_root, exist_ok=True)
 
 
 JSONDict = dict[str, str | float | bool]
@@ -39,8 +50,8 @@ class Server:
 
     @classmethod
     def from_toml(cls, name: str) -> Self:
-        with open("server_list.toml") as fp:
-            server_list = toml.load(fp)
+        with open(servers_path, "rb") as fp:
+            server_list = tomllib.load(fp)
         info = server_list[name]
         return Server(info["server_id"], info["api_key"])
 

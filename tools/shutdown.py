@@ -1,5 +1,4 @@
-from gamocosm import Server
-
+from gamocosm.core import Server
 
 def main() -> None:
     names = ["vanilla", "atm8"]
