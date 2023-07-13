@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatcling.build"
+
+[project]
+name = "gamocosm"
+version = "0.0.1"
+authors = [
+    { name="Callum Hobbis", email="callum.hobbis@gmail.com" },
+]
+description = "A Python wrapper for Gamocosm's API"
+readme = "README.md"
+requires-python = "~=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/callumhobbis/gamocosm-wrapper"
