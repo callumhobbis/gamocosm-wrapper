@@ -28,7 +28,6 @@ match args.command:
         print(status)
     case "exec":
         mc_command = ' '.join(args.rest)
-        print(f"rest: {mc_command!r}")
         server.exec(mc_command)
     case _:
         raise ValueError
